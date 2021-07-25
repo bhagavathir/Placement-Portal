@@ -1,0 +1,71 @@
+body > div > div.content > form > div.user-details > div.row{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  height: 80px;
+  column-gap: 4px;
+}
+
+body > div > div.content > form > div.user-details > div.row > div > input[type=number]{
+height: 45px;
+width: 90%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
+
+body > div > div.content > form > div.user-details > div.row > div > span{
+  color: whitesmoke;
+ }
+/*  
+body > div > div.content > form > div.user-details > div.row > div:nth-child(3) > span{
+  float:right;
+} */ 
+
+
+form .user-details .input-file{
+    height: 50px;
+    width:50%;
+    /* !margin-top: 15px; */
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  /* outline: none; */
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  height: 45px;
+  background-color: whitesmoke;
+  padding-top: 2px;
+  width:100%;
+}
+
+form.user-details.row{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+
+form .user-details .row .input-float{
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline;
+} 
+
+.user-details .row .input-float input:focus,
+.user-details .row .input-float input:valid{
+  border-color: #950740;
+  
+}
+ 
+ 
