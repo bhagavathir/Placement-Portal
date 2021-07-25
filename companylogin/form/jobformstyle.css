@@ -1,0 +1,215 @@
+::placeholder{
+  color:black;
+}
+input{
+  color:black;
+}
+form > div.user-details > p{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 2px;
+  font-size: 1.5em;
+  color: grey;
+}
+form > div.user-details > div > span{
+  padding: 0px;
+  padding-top: 20px;;
+}
+.rescontainer{
+  width: 100%;  
+  background-color: #1A1A1D;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #4e4350;
+}
+.rescontainer .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  color: whitesmoke;
+}
+.rescontainer .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg,#C3073F, #6F2232);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form > div > div > span,
+/* form .input-box span.spandetails, */
+form .input-text span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: whitesmoke;
+}
+
+form > div.user-details > h3.heading{
+  display: inline;
+  margin: 20px 0;
+  height: fit-content;
+}
+
+form > div.dept-check{
+  justify-content: space-between;
+  /* display: inline; */
+  margin: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+#other-text{
+  display: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  color: black;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  /* color: black; */
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+.user-details .input-text input:valid,
+.user-details .input-text input:focus{
+  border-color: #950740;
+  
+}
+
+form > div.user-details > div.rowform{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  height: 80px;
+  column-gap: 4px;
+  padding: 10px 0px;
+  width: 100%;
+}
+textarea {
+  resize: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+  margin-left: 35px;
+}
+
+
+ 
+
+form > div.user-details > div.input-text{
+  height: 165px;
+  width: 100%;
+  
+}
+
+form .button{
+  height: 45px;
+  margin: 8px 0
+}
+form .button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg,#C3073F, #6F2232);
+}
+form .button input:hover{
+ /* transform: scale(0.99); */
+ background: linear-gradient(-135deg, #C3073F, #6F2232);
+ }
+@media(max-width: 584px){
+.rescontainer{
+ max-width: 100%;
+}
+form .user-details .input-box{
+   margin-bottom: 15px;
+   width: 100%;
+ }
+ form .category{
+   width: 100%;
+ }
+ .content form .user-details{
+   max-height: 300px;
+   overflow-y: scroll;
+ }
+ .user-details::-webkit-scrollbar{
+   width: 5px;
+ }
+ }
+ @media(max-width: 459px){
+ .rescontainer .content .category{
+   flex-direction: column;
+ }
+}
+form > div.user-details > div.rowform > div > input[type=number],
+form > div.user-details > div.rowform > div > input[type=text]{
+height: 45px;
+width: 90%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
+
+form > div.user-details > div.rowform > div > span{
+  color: whitesmoke;
+ }
+/*  
+body > div > div.content > form > div.user-details > div.rowform > div:nth-child(3) > span{
+  float:right;
+} */ 
+
+form.user-details.rowform{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+
+form .user-details .rowform .input-float{
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline;
+} 
+
+.user-details .rowform .input-float input:focus,
+.user-details .rowform .input-float input:valid{
+  border-color: #950740;
+  
+}
+ 
+ 
