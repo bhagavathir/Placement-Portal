@@ -1,0 +1,100 @@
+CREATE TABLE AdminLogin
+(
+  AdminId INT NOT NULL,
+  Pwd VARCHAR(255) NOT NULL,
+  PRIMARY KEY (AdminId)
+);
+
+CREATE TABLE CompanyLogin
+(
+  Pwd VARCHAR(255) NOT NULL,
+  CompanyId INT NOT NULL,
+  PRIMARY KEY (CompanyId)
+);
+
+CREATE TABLE CompanyProfile
+(
+  VaccanciesCount INT NOT NULL,
+  CompanyName INT NOT NULL,
+  CompanyId INT NOT NULL,
+  PRIMARY KEY (CompanyId),
+  FOREIGN KEY (CompanyId) REFERENCES CompanyLogin(CompanyId)
+);
+
+CREATE TABLE JobDetails
+(
+  JobId INT NOT NULL,
+  JobDesc VARCHAR(255) NOT NULL,
+  ApplDeadline DATE NOT NULL,
+  CompanyId INT NOT NULL,
+  PRIMARY KEY (JobId),
+  FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(CompanyId)
+);
+
+CREATE TABLE EligibilityCriteria
+(
+  CGPA FLOAT NOT NULL,
+  mark10 INT NOT NULL,
+  mark12 INT NOT NULL,
+  JobId INT NOT NULL,
+  CompanyId INT NOT NULL,
+  FOREIGN KEY (JobId) REFERENCES JobDetails(JobId),
+  FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(CompanyId)
+);
+
+CREATE TABLE Alumni
+(
+  AlumniId INT NOT NULL,
+  FirstName VARCHAR(255) NOT NULL,
+  LastName VARCHAR(255) NOT NULL,
+  MobileNumber NUMERIC(10) NOT NULL,
+  UG VARCHAR(255) NOT NULL,
+  Department VARCHAR(255) NOT NULL,
+  Review VARCHAR(255) NOT NULL,
+  JobId INT NOT NULL,
+  CompanyId INT NOT NULL,
+  PRIMARY KEY (AlumniId),
+  FOREIGN KEY (JobId) REFERENCES JobDetails(JobId),
+  FOREIGN KEY (CompanyId) REFERENCES CompanyProfile(CompanyId)
+);
+
+CREATE TABLE StudentLogin
+(
+  StudentId INT NOT NULL,
+  pwd VARCHAR(255) NOT NULL,
+  PRIMARY KEY (StudentId)
+);
+
+CREATE TABLE StudentDetails
+(
+  FirstName VARCHAR(255) NOT NULL,
+  LastName VARCHAR(255) NOT NULL,
+  DoB DATE NOT NULL,
+  EmailId VARCHAR(255) NOT NULL,
+  MobileNumber NUMERIC(10) NOT NULL,
+  UG VARCHAR(255) NOT NULL,
+  Department VARCHAR(255) NOT NULL,
+  StudentId INT NOT NULL,
+  PRIMARY KEY (StudentId),
+  FOREIGN KEY (StudentId) REFERENCES StudentLogin(StudentId)
+);
+
+CREATE TABLE StudentResume
+(
+  ResumeID INT NOT NULL,
+  CGPA INT NOT NULL,
+  mark10 INT NOT NULL,
+  mark12 INT NOT NULL,
+  StudentId INT NOT NULL,
+  PRIMARY KEY (ResumeID),
+  FOREIGN KEY (StudentId) REFERENCES StudentLogin(StudentId)
+);
+
+CREATE TABLE ApplicationStatus
+(
+  Status CHAR NOT NULL,
+  ResumeID INT NOT NULL,
+  JobId INT NOT NULL,
+  FOREIGN KEY (ResumeID) REFERENCES StudentResume(ResumeID),
+  FOREIGN KEY (JobId) REFERENCES JobDetails(JobId)
+);
