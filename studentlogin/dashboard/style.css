@@ -1,0 +1,422 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width:100%;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #1A1A1D;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+    width:60px;
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+.navigation ul li{
+    position: relative;
+    width:100%;
+    list-style: none;
+    margin-top: 5px;
+
+}
+.navigation ul li:hover{
+     background: #950740;
+
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background:transparent;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width:100%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-decoration: none;
+    color: #423441;
+}
+
+.navigation ul li .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    
+}
+
+.navigation ul li .icon .fa{
+    color: white;
+    font-size: 24px;
+    /* flex-grow: 0; */
+    display: block;
+}
+
+.navigation ul li a title{
+    position: relative;
+    display: block;
+    padding: 0px 10px;
+    height: 60px;
+    margin-top: 10px;
+    line-height: 60px;
+    white-space: normal; 
+    /* flex-grow: 1; */
+}
+/* .container .navigation ul li .border{
+    border-bottom: grey solid;
+    
+}
+body > div.container > div > ul > li:nth-child(2) > div */
+
+.container div ul li a .border-grey{
+    border-bottom: #e1e5ea solid;
+    
+}
+
+.container div ul li:nth-child(1) a div{
+    border-bottom:none
+}
+
+.container div ul li a div{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    text-align: center;
+    height: 60px;
+    padding-top: 15px;
+}
+/* .container > div > ul > li:nth-child(4) > a > div */
+
+.container div ul li a .border-red{
+    border-bottom: #c3073f solid;
+}
+
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left:300px;
+    min-height: 100vh;
+    background: rgb(12, 12, 12);
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .topbar{
+    width: 100%;
+    background: #1A1A1D;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #950740;
+    cursor: pointer;
+}
+.toggle::before{
+    content: '\f0c9';
+    font-family:"Font Awesome 5 Free";
+    position: absolute ;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    font-weight: 900;
+    color: whitesmoke;
+    text-align: center;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid white ;
+}
+.search label .fas{
+    position: absolute;
+    left:15px;
+    top:4px;
+
+}
+.user{
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.cardBox{
+    position: relative;
+    width:100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card{
+    position: relative;
+    background: #1A1A1D;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.cardBox .card .cardName{
+    color: grey ;
+}
+
+.cardBox .card .iconBox{
+    font-size: 1.5em;
+    color: grey;
+    text-align: center;
+    vertical-align: middle;
+}
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    padding-top: 20px;
+    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+
+}
+
+.details .recent{
+    position: relative;
+    /* display: grid; */
+    min-height: 530px;
+    background:#1A1A1D;
+    padding: 20px;
+}
+
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2{
+    font-weight: 600;
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: grey;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+
+
+}
+
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td{
+    font-weight: 600;
+}
+.details .recent table tr{
+    border-bottom: 1px solid grey;
+}
+.details .recent table tbody tr:last-child{
+    border-bottom: none;
+}
+.details .recent table tbody tr:hover{
+    background: #4e4e50;
+    color: white;
+}
+.details .recent table tr td{
+    padding: 9px 5px;
+}
+.details .recent table tbody td:last-child,
+.details .recent table thead td:last-child{
+    text-align: right;
+}
+
+/* .details .recent table tbody td:nth-child(2),
+.details .recent table thead td:nth-child(2){
+    text-align: right;
+    padding-right: 20px;
+} */
+.status{
+    position: relative;
+    padding: 2px 4px;
+    background: rgb(228, 76, 76);
+    color:white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 300 ;
+    letter-spacing: 1px;
+}
+
+.placed{
+    background: rgb(81, 158, 81);
+}
+.pending{
+    background: #f8b711;
+}
+
+.details .recentComm{
+    position: relative;
+    display: grid;
+    min-height: 530px;
+    background: #1A1A1D;
+    padding:20px;
+}
+
+.details .recentComm .imgBx
+{
+    position: relative;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.details .recentComm .imgBx img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.details .recentComm table tr:hover,
+.details .recentComm table tr:hover td h4 span{
+    background: #4e4e50;
+    color: white;
+}
+
+.details .recentComm table tr td{
+    padding:7px 10px;
+}
+.details .recentComm table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.details .recentComm table tr td h4 span{
+    font-size: 14px;
+    color: grey;
+}
+
+/* responsive  */
+@media (max-width: 992px){
+    .navigation{
+        left:-300px;
+    }
+    .navigation.active{
+        left: 0;
+        width:300px;
+    }
+    .main{
+        width: 100%;
+        left:0;
+    }
+    .main.active{
+        width: calc(100% - 300px);
+        left:300px;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .details{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+}
+
+@media (max-width:480px){
+    .cardBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .deatils .recent{
+        overflow-x: auto;
+    }
+    .details .recent table{
+        width:600px;
+    }
+    .navigation{
+        width:100%;
+        left:-100%;
+        z-index: 1000 ;
+     }
+    .navigationactive{ 
+        width:100%;
+        left:0;
+    }
+    .toggle.active{
+        position: fixed;
+        z-index: 10000;
+        right:0;
+        left:initial;
+        
+    }
+    .toggle.active::before{
+        color: white;
+    }
+    .main,.main.active{
+        width:100%;
+        left:0;
+    }
+
+}
